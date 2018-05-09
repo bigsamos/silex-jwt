@@ -3,7 +3,14 @@
   "description": "Library for work with JWT on Silex framework",
   "keywords": ["silex","extension","jwt"],
   "license": "MIT",
-  "authors": [
+  "repositories":
+    [
+            {
+                "type": "vcs",
+                "url": "https://github.com/bigsamos/silex-jwt"
+            }
+    ],
+	"authors": [
     {
       "name": "Vitalii [ofat] Ofat",
       "email": "ofatv22@gmail.com"
