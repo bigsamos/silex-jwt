@@ -1,5 +1,5 @@
 {
-  "name": "ofat/silex-jwt",
+  "name": "bigsamos/silex-jwt",
   "description": "Library for work with JWT on Silex framework",
   "keywords": ["silex","extension","jwt"],
   "license": "MIT",
@@ -22,7 +22,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Ofat\\SilexJWT\\": "src"
+      "Bigsamos\\SilexJWT\\": "src"
     }
   },
   "minimum-stability": "stable"
