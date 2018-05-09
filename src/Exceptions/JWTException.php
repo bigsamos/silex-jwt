@@ -9,7 +9,7 @@ namespace Ofat\SilexJWT\Exceptions;
  * Class JWTException
  * @package Ofat\SilexJWT\Exceptions
  */
-class JWTException extends \Exception
+class JWTException extends \Symfony\Component\HttpKernel\Exception\HttpException
 {
     /**
      * @var int
@@ -22,7 +22,7 @@ class JWTException extends \Exception
      */
     public function __construct($message = 'An error occurred', $statusCode = null)
     {
-        parent::__construct($message);
+        parent::__construct($statusCode, $message);
 
         if (! is_null($statusCode)) {
             $this->setStatusCode($statusCode);
