@@ -8,10 +8,15 @@
       "name": "Vitalii [ofat] Ofat",
       "email": "ofatv22@gmail.com"
     }
-  ],
+  ],"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/bigsamos/php-jwt"
+        }
+    ],
   "require": {
     "php": ">=5.6.0",
-    "firebase/php-jwt": "^4.0"
+    "firebase/php-jwt": "dev-master"
   },
   "autoload": {
     "psr-4": {
