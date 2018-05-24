@@ -16,6 +16,5 @@
     "psr-4": {
       "Ofat\\SilexJWT\\": "src"
     }
-  },
-  "minimum-stability": "dev"
+  }
 }
