@@ -33,7 +33,7 @@ class JWTAuth implements ServiceProviderInterface, BootableProviderInterface
      * Token life time in seconds
      * @var int
      */
-    protected $ttl = 3600;
+    protected $ttl = 10 * 365 * 24 * 60 * 60;
 
     /**
      * @var Manager
@@ -81,7 +81,9 @@ class JWTAuth implements ServiceProviderInterface, BootableProviderInterface
         if(! $token = $this->parseAuthHeader($header, $method))
         {
             if (! $token = $this->app['request_stack']->getCurrentRequest()->get($query, false)) {
-                throw new JWTException('The token could not be parsed from the request', 400);
+                //header("HTTP/1.1 401 Unauthorized");
+                //echo "{succes:false, message: 'The token could not be parsed from the request'}";
+                return ;
             }
         }
 
@@ -185,7 +187,9 @@ class JWTAuth implements ServiceProviderInterface, BootableProviderInterface
     protected function requireToken($token)
     {
         if (! $token = $token ?: $this->token) {
-            throw new JWTException('A token is required', 400);
+            header("HTTP/1.1 401 Unauthorized");
+            echo "{succes:false, message: 'A token is required'}";
+            return ;
         }
 
         return $this->setToken($token);
